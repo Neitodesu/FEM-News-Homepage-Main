@@ -1,0 +1,28 @@
+---
+interface Props {
+	id: string;
+	title: string;
+	body: string;
+}
+
+const { id, title, body } = Astro.props;
+---
+
+<div class="container">
+	<div class="card-img">
+		<img src="" alt="">
+	</div>
+	<div class="card-details">
+		<h2>{id}</h2>
+		<h3>{title}</h3>
+		<p>{body}</p>
+	</div>
+</div>
+
+
+<style lang="scss">
+	.container{
+		display: flex;
+		margin: 0 auto;
+	}
+</style>

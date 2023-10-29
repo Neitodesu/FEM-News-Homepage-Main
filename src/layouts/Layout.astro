@@ -1,0 +1,94 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global lang="scss">
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		font-size: 100%;
+		font-family: var(--ffMain);
+	}
+
+	body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+	}
+
+	ul,
+	li {
+		list-style: none;
+		padding: 0;
+	}
+
+	img,
+	picture,
+	video,
+	canvas,
+	svg {
+  display: block;
+  max-width: 100%;
+	}
+
+	input,
+	button,
+	textarea,
+	select {
+  font: inherit;
+	}
+
+	p,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+  overflow-wrap: break-word;
+	}
+
+	:root{
+		--softOrange: hsl(35, 77%, 62%);
+		--softRed: hsl(5, 85%, 63%);
+
+		--offWhite: hsl(36, 100%, 99%);
+		--grayishBlue: hsl(233, 8%, 79%);
+		--darkGrayishBlue: hsl(236, 13%, 42%);
+		--veryDarkBlue: hsl(240, 100%, 5%);
+
+		--ffMain: Inter, sans-serif;
+
+		--fwSm: 400;
+		--fwBold: 700;
+		--fwXBold: 800;
+	}
+</style>
